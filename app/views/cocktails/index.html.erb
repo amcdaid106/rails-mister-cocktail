@@ -1,5 +1,7 @@
 <h1>All Cocktails</h1>
 
 <% @cocktails.each_with_index do |cocktail, index| %>
-  <li><%= index + 1 %>) <%= cocktail.name %></li>
+  <li><%= index + 1 %>) <%= link_to "#{cocktail.name}", cocktail_path(cocktail[:id]) %>
 <% end %>
+
+<p><%= link_to "Add a cocktail", new_cocktail_path %></p>
